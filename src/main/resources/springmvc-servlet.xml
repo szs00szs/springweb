@@ -9,6 +9,10 @@
     http://www.springframework.org/schema/mvc
     http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
+	<!-- 注入配置文件 -->
+	<context:property-placeholder location="classpath:project.properties"
+		file-encoding="UTF-8" system-properties-mode="NEVER" />
+
 	<!-- scan the package and the sub package -->
 	<context:component-scan base-package="cc.hansam.springmvc" />
 
@@ -16,7 +20,28 @@
 	<mvc:default-servlet-handler />
 
 	<!-- if you use annotation you must configure following setting -->
-	<mvc:annotation-driven />
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="true">
+
+			<!--将StringHttpMessageConverter的默认编码设为UTF-8 -->
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<constructor-arg value="UTF-8" />
+			</bean>
+
+			<!-- 配置Fastjson支持,默认使用的是Jackson -->
+			<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/html;charset=UTF-8</value>
+						<value>application/json;charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+			
+		</mvc:message-converters>
+
+	</mvc:annotation-driven>
+
 
 	<!-- configure the InternalResourceViewResolver -->
 	<bean

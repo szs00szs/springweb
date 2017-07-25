@@ -1,9 +1,12 @@
 package cc.hansam.springmvc.po;
 
+import com.alibaba.fastjson.annotation.JSONType;
+
 /**
  * @author hansam 945210972@qq.com
  * @date 2017年7月5日下午12:11:37
  */
+@JSONType(orders= {"id","name","age"})
 public class Student {
 
 	private Integer id;

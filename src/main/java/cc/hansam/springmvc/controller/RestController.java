@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -132,5 +133,29 @@ public class RestController {
 		return jsonObject;
 	}
 	
+	
+	/**
+	 * 封装odb数据格式要求
+	 */
+	@RequestMapping(value = "v5.0/new/{project}", method = RequestMethod.POST)
+	@ResponseBody
+	public JSONObject demo05(@PathVariable String project, HttpServletRequest request,@RequestBody Student student) {
+
+		// 可以使用project获取url路径分隔
+
+		// 获取请求的参数
+		
+		
+
+		JSONArray jsonArray = new JSONArray();
+		jsonArray.add(student);
+
+		JSONObject jsonObject = new JSONObject(true);
+		jsonObject.put("data", jsonArray);
+		jsonObject.put("code", -1);
+		jsonObject.put("success", true);
+
+		return jsonObject;
+	}
 
 }

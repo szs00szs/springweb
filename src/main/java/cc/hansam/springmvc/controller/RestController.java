@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
@@ -135,7 +137,7 @@ public class RestController {
 	
 	
 	/**
-	 * 封装odb数据格式要求
+	 * 封装odb数据格式要求（参数为json对象）
 	 */
 	@RequestMapping(value = "v5.0/new/{project}", method = RequestMethod.POST)
 	@ResponseBody
@@ -156,6 +158,32 @@ public class RestController {
 		jsonObject.put("success", true);
 
 		return jsonObject;
+	}
+	
+	/**
+	 * 封装odb数据格式要求（参数为form属性值）
+	 */
+	@RequestMapping(value = "v6.0/new/{project}", method = RequestMethod.POST)
+	@ResponseBody
+	public JSON demo06(@PathVariable String project, HttpServletRequest request,@RequestParam String name,@RequestParam int id,@RequestParam int age) {
+
+		// 可以使用project获取url路径分隔
+
+		// 获取请求的参数
+		
+
+		JSONArray jsonArray = new JSONArray();
+		jsonArray.add(id);
+		jsonArray.add(name);
+		jsonArray.add(age);
+
+		JSONObject jsonObject = new JSONObject(true);
+		jsonObject.put("data", jsonArray);
+		jsonObject.put("code", -1);
+		jsonObject.put("success", true);
+		
+		return jsonObject;
+
 	}
 
 }

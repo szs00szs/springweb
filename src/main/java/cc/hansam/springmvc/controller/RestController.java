@@ -141,19 +141,16 @@ public class RestController {
 	 */
 	@RequestMapping(value = "v5.0/new/{project}", method = RequestMethod.POST)
 	@ResponseBody
-	public JSONObject demo05(@PathVariable String project, HttpServletRequest request,@RequestBody Student student) {
+	public JSONObject demo05(@PathVariable String project, HttpServletRequest request, @RequestBody String body) {
 
 		// 可以使用project获取url路径分隔
 
 		// 获取请求的参数
 		
+		Student student = JSON.parseObject(body, Student.class);
 		
-
-		JSONArray jsonArray = new JSONArray();
-		jsonArray.add(student);
-
 		JSONObject jsonObject = new JSONObject(true);
-		jsonObject.put("data", jsonArray);
+		jsonObject.put("data", student);
 		jsonObject.put("code", -1);
 		jsonObject.put("success", true);
 

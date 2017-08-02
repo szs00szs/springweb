@@ -1,6 +1,7 @@
 package cc.hansam.springmvc.controller;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,12 +13,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 @RequestMapping("/hello")
+@PropertySource("classpath:dev.properties")
 public class HelloController {
 
-	@Value(value = "${user.name}")
+	@Value(value = "${dev.name}")
 	private String name;
 
-	@Value(value = "${user.pass}")
+	@Value(value = "${dev.pass}")
 	private String pass;
 
 	@RequestMapping(method = RequestMethod.GET)

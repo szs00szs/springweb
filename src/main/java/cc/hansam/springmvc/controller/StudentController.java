@@ -9,6 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSON;
@@ -42,11 +43,14 @@ public class StudentController {
 		return "result";
 	}
 	
+	/**
+	 * 整合spring+spirngmvc+mybatis
+	 */
 	@RequestMapping("/ssm")
-	public void test1() {
+	@ResponseBody
+	public Student getStudent() {
 		Student student = studentService.getStudentById(1);
-		System.out.println(student);
 		logger.info(JSON.toJSONString(student));
-		
+		return student;
 	}
 }

@@ -16,6 +16,7 @@
 		<mybatis.version>3.4.1</mybatis.version>
 
 		<!-- log4j日志文件管理包版本 -->
+		<slf4j.version>1.7.25</slf4j.version>
 		<log4j.version>1.2.17</log4j.version>
 	</properties>
 
@@ -64,12 +65,22 @@
 			<version>5.1.39</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<!-- 添加日志相关jar包 -->
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
+<!-- 		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency> -->
 
 
 		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->

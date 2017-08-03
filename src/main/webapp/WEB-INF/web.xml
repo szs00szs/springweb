@@ -8,12 +8,6 @@
 		<param-value>classpath:spring-mybatis.xml</param-value>
 	</context-param>
 
-	<!-- Spring监听器 -->
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener
-		</listener-class>
-	</listener>
-
 	<!-- 编码过滤器 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
@@ -30,6 +24,17 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
+	<!-- Spring监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	
+    <!-- 防止spring内存溢出监听器，比如quartz -->  
+    <listener>  
+        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>  
+    </listener>  
+
 	<!-- Spring MVC servlet -->
 	<servlet>
 		<servlet-name>springmvc</servlet-name>
@@ -41,9 +46,14 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+    <!-- session配置 -->  
+    <session-config>  
+        <session-timeout>15</session-timeout>  
+    </session-config>  
+    
 </web-app>

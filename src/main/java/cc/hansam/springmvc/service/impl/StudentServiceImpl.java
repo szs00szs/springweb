@@ -4,19 +4,19 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import cc.hansam.springmvc.dao.IStudentDao;
+import cc.hansam.springmvc.dao.StudentDao;
 import cc.hansam.springmvc.po.Student;
-import cc.hansam.springmvc.service.IStudentService;
+import cc.hansam.springmvc.service.StudentService;
 
 /**
  * @author hansam 945210972@qq.com
  * @date 2017年8月2日下午1:52:12
  */
 @Service("studentService")
-public class StudentServiceImpl implements IStudentService {
+public class StudentServiceImpl implements StudentService {
 	
 	@Resource
-	private IStudentDao studentDao;
+	private StudentDao studentDao;
 
 	@Override
 	public Student getStudentById(int id) {

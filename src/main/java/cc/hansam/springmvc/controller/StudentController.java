@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.alibaba.fastjson.JSON;
 
 import cc.hansam.springmvc.po.Student;
-import cc.hansam.springmvc.service.IStudentService;
+import cc.hansam.springmvc.service.StudentService;
 
 /**
  * @author hansam 945210972@qq.com
@@ -27,7 +27,7 @@ public class StudentController {
 	private static Logger logger = Logger.getLogger(StudentController.class);
 	
 	@Resource
-	private IStudentService studentService;
+	private StudentService studentService;
 
 	@RequestMapping(value = "/student", method = RequestMethod.GET)
 	public ModelAndView student() {

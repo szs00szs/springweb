@@ -10,7 +10,7 @@
                         http://www.springframework.org/schema/tx/spring-tx.xsd">  
 
 	<!-- 自动扫描 -->
-	<context:component-scan base-package="cc.hansam.springmvc" />
+	<context:component-scan base-package="cc.hansam.business" />
 
 	<!-- 引入配置文件,local-override覆盖系统变量-->
 	<context:property-placeholder location="classpath:jdbc.properties" file-encoding="UTF-8" local-override="true"/>
@@ -31,12 +31,12 @@
         <!-- 自动扫描mapping.xml文件 -->  
         <property name="mapperLocations" value="classpath*:/mapper/*.xml"></property>
         <!-- 指定实体类的包名，自动将实体类简单类名映射成为别名 -->
-        <property name="typeAliasesPackage" value="cc.hansam.springmvc.po" />
+        <property name="typeAliasesPackage" value="cc.hansam.business.po" />
     </bean>  
   
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->  
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
-        <property name="basePackage" value="cc.hansam.springmvc.dao" />
+        <property name="basePackage" value="cc.hansam.business.dao" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>  
   

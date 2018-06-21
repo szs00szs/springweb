@@ -2,7 +2,7 @@
  * $Id: EncodingFilter.java 49 2013-10-17 05:17:47Z fenglei.you $
  * Copyright(C) 2010-2016 mbkele.com.cn. All rights reserved.
  */
-package cc.hansam.springmvc.filter;
+package cc.hansam.filter;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;

@@ -1,4 +1,4 @@
-package cc.hansam.springmvc.controller;
+package cc.hansam.business.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;

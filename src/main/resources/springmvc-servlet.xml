@@ -11,7 +11,7 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">  
 
 	<!-- scan the package and the sub package -->
-	<context:component-scan base-package="cc.hansam.springmvc" />
+	<context:component-scan base-package="cc.hansam.business" />
 
 	<!-- don't handle the static resource -->
 	<mvc:default-servlet-handler />

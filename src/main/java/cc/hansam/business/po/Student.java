@@ -1,4 +1,4 @@
-package cc.hansam.springmvc.po;
+package cc.hansam.business.po;
 
 import com.alibaba.fastjson.annotation.JSONType;
 

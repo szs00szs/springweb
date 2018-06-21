@@ -1,12 +1,12 @@
-package cc.hansam.springmvc.service.impl;
+package cc.hansam.business.service.impl;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import cc.hansam.springmvc.dao.StudentDao;
-import cc.hansam.springmvc.po.Student;
-import cc.hansam.springmvc.service.StudentService;
+import cc.hansam.business.dao.StudentDao;
+import cc.hansam.business.po.Student;
+import cc.hansam.business.service.StudentService;
 
 /**
  * @author hansam 945210972@qq.com

@@ -1,6 +1,6 @@
-package cc.hansam.springmvc.service;
+package cc.hansam.business.service;
 
-import cc.hansam.springmvc.po.Student;
+import cc.hansam.business.po.Student;
 
 /**
  * @author hansam 945210972@qq.com

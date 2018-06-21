@@ -1,4 +1,4 @@
-package cc.hansam.springmvc.controller;
+package cc.hansam.business.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
-import cc.hansam.springmvc.po.Student;
+import cc.hansam.business.po.Student;
 
 /**
  * @author hansam 945210972@qq.com

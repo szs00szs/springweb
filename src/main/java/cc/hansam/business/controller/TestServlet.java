@@ -1,4 +1,4 @@
-package cc.hansam.springmvc.controller;
+package cc.hansam.business.controller;
 
 import com.alibaba.fastjson.JSON;
 

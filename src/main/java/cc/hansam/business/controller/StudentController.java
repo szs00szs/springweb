@@ -1,4 +1,4 @@
-package cc.hansam.springmvc.controller;
+package cc.hansam.business.controller;
 
 
 import javax.annotation.Resource;
@@ -14,8 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSON;
 
-import cc.hansam.springmvc.po.Student;
-import cc.hansam.springmvc.service.StudentService;
+import cc.hansam.business.po.Student;
+import cc.hansam.business.service.StudentService;
 
 /**
  * @author hansam 945210972@qq.com

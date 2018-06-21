@@ -1,6 +1,6 @@
-package cc.hansam.springmvc.dao;
+package cc.hansam.business.dao;
 
-import cc.hansam.springmvc.po.Student;
+import cc.hansam.business.po.Student;
 
 /**
  * @author hansam 945210972@qq.com
